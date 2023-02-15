@@ -25,7 +25,6 @@ if (process.env.NODE_ENV === "development") {
 
 // database connection
 const db = process.env.DATABASE_URL;
-mongoose.set("strictQuery", false);
 mongoose
     .connect(
         "mongodb+srv://jashan:jashan@cluster0.uk6ibk0.mongodb.net/?retryWrites=true&w=majority",
@@ -41,6 +40,7 @@ mongoose
         console.log(err);
     });
 
+mongoose.set("strictQuery", false);
 app.get("/", (req, res) => res.send("Hello World!"));
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/tasks", taskRoutes);
