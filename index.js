@@ -27,10 +27,13 @@ if (process.env.NODE_ENV === "development") {
 const db = process.env.DATABASE_URL;
 mongoose.set("strictQuery", false);
 mongoose
-    .connect(db, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
+    .connect(
+        "mongodb+srv://jashan:jashan@cluster0.uk6ibk0.mongodb.net/?retryWrites=true&w=majority",
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        }
+    )
     .then(() => {
         console.log("DB connection successful!");
     })
