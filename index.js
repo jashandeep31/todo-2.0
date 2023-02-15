@@ -10,7 +10,7 @@ const cors = require("cors");
 // app port and dotenv settings
 dotenv.config({ path: "./config.env" });
 const app = express();
-const port = 3000;
+const port = 4000;
 app.use(express.json());
 
 app.use(
@@ -47,6 +47,6 @@ app.all("*", (req, res, next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 app.use(errorController);
-// app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 module.exports = app;
