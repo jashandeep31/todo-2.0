@@ -40,7 +40,7 @@ moongoose
         console.log(err);
     });
 
-// app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => res.send("Hello World!"));
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/tasks", taskRoutes);
 app.all("*", (req, res, next) => {
