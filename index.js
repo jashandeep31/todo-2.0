@@ -1,5 +1,5 @@
 const express = require("express");
-const moongoose = require("mongoose");
+const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const userRoutes = require("./routes/userRoutes");
@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === "development") {
 // database connection
 const db = process.env.DATABASE_URL;
 mongoose.set("strictQuery", false);
-moongoose
+mongoose
     .connect(db, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
