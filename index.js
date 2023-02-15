@@ -24,10 +24,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // database connection
-const db = process.env.DATABASE_URL.replace(
-    "<password>",
-    process.env.DATABASE_PASSWORD
-);
+const db = process.env.DATABASE_URL;
 moongoose
     .connect(db, {
         useNewUrlParser: true,
