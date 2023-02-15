@@ -25,6 +25,7 @@ if (process.env.NODE_ENV === "development") {
 
 // database connection
 const db = process.env.DATABASE_URL;
+mongoose.set("strictQuery", false);
 moongoose
     .connect(db, {
         useNewUrlParser: true,
